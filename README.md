@@ -16,6 +16,36 @@ bash bootstrap.sh
 
 This will automatically run all setup scripts in the `git/`, `shell/`, and `system/` folders.
 
+Or you can simply copy and paste it anywhere to run.
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/encoreshao/setup-scripts/main/git/setup-git-config.sh)"
+
+=== Setting up Git global configuration ===
+Enter your Git username: Encore
+Enter your Git email: encore.shao@gmail.com
+✅ Git config setup complete
+user.name=Encore
+user.email=encore.shao@gmail.com
+core.editor=vim
+color.ui=auto
+init.defaultbranch=main
+pull.rebase=false
+push.default=simple
+diff.tool=vimdiff
+alias.co=checkout
+alias.br=branch
+alias.ci=commit
+alias.st=status
+alias.last=log -1 HEAD
+alias.unstage=reset HEAD --
+alias.lg=log --oneline --graph --decorate --all
+alias.undo=reset --soft HEAD~1
+alias.amend=commit --amend --no-edit
+alias.tags=tag -l
+alias.remotes=remote -v
+```
+
 ---
 
 ## 📁 Repository Structure
@@ -99,9 +129,3 @@ bash system/install-node.sh
 * On macOS, `setup-macos.sh` will handle Homebrew, dev tools, and optional apps.
 * On Linux, `setup-system.sh` detects apt or yum and installs core packages.
 * Zsh users: after running `setup-zsh-theme.sh`, restart your terminal or run `source ~/.zshrc`.
-
-### 🪄 Usage
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/encoreshao/setup-scripts/main/bootstrap.sh
-```
