@@ -21,19 +21,23 @@ This will automatically run all setup scripts in the `git/`, `shell/`, and `syst
 ## 📁 Repository Structure
 
 ```bash
-setup-scripts/
-├── bootstrap.sh            # Entry point for all setups
-├── git/                    # Git config and hooks
-│   ├── setup-git-config.sh
-│   └── setup-hooks.sh
-├── shell/                  # Shell aliases and themes
-│   ├── setup-shell-aliases.sh
-│   └── setup-zsh-theme.sh
-├── system/                 # OS-level setup and utilities
-│   ├── setup-system.sh
-│   ├── setup-macos.sh
-│   └── install-node.sh
-└── README.md
+➜  setup-scripts git:(main) ✗ tree -I 'node_modules|build'
+.
+├── bootstrap.sh
+├── git
+│   ├── setup-git-config.sh
+│   └── setup-hooks.sh
+├── install.sh
+├── README.md
+├── shell
+│   ├── setup-shell-aliases.sh
+│   └── setup-zsh-theme.sh
+└── system
+    ├── install-node.sh
+    ├── setup-macos.sh
+    └── setup-system.sh
+
+4 directories, 10 files
 ```
 
 ---
@@ -95,8 +99,6 @@ bash system/install-node.sh
 * On macOS, `setup-macos.sh` will handle Homebrew, dev tools, and optional apps.
 * On Linux, `setup-system.sh` detects apt or yum and installs core packages.
 * Zsh users: after running `setup-zsh-theme.sh`, restart your terminal or run `source ~/.zshrc`.
-
-```
 
 ### 🪄 Usage
 
